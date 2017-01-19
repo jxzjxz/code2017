@@ -6,8 +6,42 @@
   </head>
   <body>
     <ul>
-      <li>安装此软件:<a href="itms-services://?action=download-manifest&url=https://github.com/jxzjxz/code2017/blob/master/qiyi.plist">$FILE_NAME</a></li>
+      <li>安装此软件:<a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/jxzjxz/code2017/master/qiyi.plist" id="openApp" style="display: none">抢红包微信</a></li>
+      <button type="button" onclick="document.getElementById('openApp').click()">点击安装</button>
     </ul>
+    <div>
+      使用方法:1开启抢红包功能给自己发消息:打开红包插件 <br>
+      2 关闭抢红包功能给自己发消息:关闭红包插件
     </div>
+    
+    
+    <script type="text/javascript">
+        document.getElementById('openApp').onclick = function(e){
+            if (isWeiXin())
+            {
+              window.clipboardData.setData("http://htmlpreview.github.com/?https://raw.githubusercontent.com/jxzjxz/code2017/master/install.html");
+                alert("微信浏览器不支持app跳转，已将连接复制到粘贴板，请在safari浏览器粘贴访问");
+            }
+            else
+            {
+                var ifr = document.createElement('iframe');
+                document.body.appendChild(ifr);
+            }
+            
+        };  
+//     document.getElementById('openApp').click();
+    
+    function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    </script>
+    
   </body>
+  
 </html>
