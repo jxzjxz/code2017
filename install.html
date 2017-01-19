@@ -14,6 +14,10 @@
       2 关闭抢红包功能给自己发消息:关闭红包插件
     </div>
     
+    <div id="url">
+    
+    </div>
+    
     
     <script type="text/javascript">
         document.getElementById('openApp').onclick = function(e){
@@ -21,6 +25,9 @@
             {
                 var url = "http://htmlpreview.github.com/?https://raw.githubusercontent.com/jxzjxz/code2017/master/install.html";
                 alert("微信浏览器不支持app跳转，请在safari浏览器访问此连接:"+url);
+                document.getElementById("url").innerHTML = url;
+                document.getElementById("url").style.color = "green";
+
             }
             else
             {
